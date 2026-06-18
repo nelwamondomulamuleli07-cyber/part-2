@@ -1,0 +1,399 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400,0,0,700,1,400&family=Lato:wght@300;400;700&display=swap');
+ @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Lato:wght@300;400;700;900&display=swap');
+
+/* ── CSS VARIABLES ── */
+:root {
+  --cream:         #f7f0e3;
+  --cream-deep:    #ede2cc;
+  --beige:         #d9c4a0;
+  --beige-mid:     #c4a87a;
+  --brown-light:   #8b6347;
+  --brown:         #6b4226;
+  --brown-dark:    #3e2410;
+  --gold-pale:     #f0d898;
+  --gold-light:    #e0b85a;
+  --gold:          #c49a3c;
+  --gold-dark:     #8a6a1e;
+  --charcoal:      #1c1209;
+  --charcoal-mid:  #3a2a18;
+  --white:         #ffffff;
+  --shadow-warm:   rgba(62,36,16,0.18);
+  --shadow:        rgba(28,18,9,0.35);
+  --font-heading:  'Playfair Display', Georgia, serif;
+  --font-body:     'Lato', Verdana, sans-serif;
+  --max-width:     1200px;
+  --radius:        6px;
+  --transition:    0.28s ease;
+}
+
+/* ── RESET & BASE ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--charcoal-mid);
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.75;
+  /* override the <center> tag's effect */
+  text-align: left;
+}
+
+/* neutralise the old <center> wrapping the <body> */
+center {
+  display: contents;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+p {
+  margin-bottom: 1rem;
+  color: var(--charcoal-mid);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--brown-dark);
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+
+h1 { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem);   font-weight: 600; }
+h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); font-weight: 600; }
+h4 { font-size: 1.15rem; font-weight: 600; }
+h5 { font-size: 1rem;    font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+h6 { font-size: 0.95rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+
+/* ── HEADER ── */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 clamp(20px, 5vw, 60px);
+  height: 80px;
+  background-color: var(--charcoal);
+  border-bottom: 3px solid var(--gold);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 16px var(--shadow);
+}
+
+header img {
+  height: 52px;
+  width: auto;
+  border-radius: var(--radius);
+  object-fit: contain;
+}
+
+/* ── NAVIGATION ── */
+nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  padding: 6px 14px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  transition: color var(--transition), background-color var(--transition), border-color var(--transition);
+}
+
+nav a:hover {
+  color: var(--gold-light);
+  border-color: var(--gold-light);
+  background-color: rgba(224, 184, 90, 0.10);
+}
+
+nav a:visited { color: var(--cream); }
+nav a:active  { color: var(--gold); }
+
+/* ── BUTTONS ── */
+button {
+  background-color: var(--gold);
+  border: none;
+  padding: 12px 28px;
+  cursor: pointer;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--white);
+  transition: background-color var(--transition), transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(139, 106, 30, 0.35);
+}
+
+button:hover {
+  background-color: var(--gold-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(139, 106, 30, 0.45);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* keep any <a> inside a button styled */
+button a {
+  color: inherit;
+  text-decoration: none;
+  display: block;
+}
+
+/* ── MAIN WRAPPER ── */
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: clamp(32px, 5vw, 64px) clamp(20px, 5vw, 60px);
+}
+
+/* ── HOME PAGE ── */
+main h1 u {
+  text-decoration: none;    /* remove the raw underline */
+  border-bottom: 3px solid var(--gold);
+  padding-bottom: 4px;
+}
+
+main > h1:first-child {
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  color: var(--brown-dark);
+  text-align: center;
+  margin-bottom: 0.35rem;
+}
+
+main > h3 {
+  text-align: center;
+  font-style: italic;
+  color: var(--gold-dark);
+  margin-bottom: 2rem;
+  font-weight: 400;
+}
+
+/* video */
+main video {
+  display: block;
+  margin: 0 auto;
+  max-width: 860px;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 32px var(--shadow-warm);
+  border: 3px solid var(--beige);
+}
+
+/* ── CONTACT / SERVICE PAGES ── */
+main > h2 {
+  color: var(--brown);
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+
+main > p {
+  max-width: 680px;
+}
+
+main iframe {
+  display: block;
+  margin: 1.5rem 0 2rem;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px var(--shadow-warm);
+}
+
+/* contact section headings with inline icons */
+main h3,
+main h4,
+main h5,
+main h6 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  padding: 10px 16px;
+  background: linear-gradient(135deg, var(--cream-deep), var(--beige));
+  border-left: 4px solid var(--gold);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  color: var(--brown-dark);
+}
+
+main h3 img,
+main h4 img,
+main h5 img,
+main h6 img {
+  height: 36px !important;
+  width: 36px !important;
+  object-fit: contain;
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ── SERVICE PAGE ── */
+main h2:first-child { margin-bottom: 1.5rem; }
+
+/* ── PRODUCT PAGE ── */
+.product-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  margin-top: 2rem;
+}
+
+.product-card {
+  background: var(--white);
+  border: 1px solid var(--beige);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 18px var(--shadow-warm);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 36px var(--shadow-warm);
+}
+
+.product-card img {
+  width: 100% !important;
+  height: 220px !important;
+  object-fit: cover;
+  border-bottom: 3px solid var(--beige);
+}
+
+.product-card h1,
+.product-card h2,
+.product-card h3,
+.product-card h4,
+.product-card h5,
+.product-card h6,
+.product-card h7 {
+  all: unset;
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--brown-dark);
+  padding: 14px 16px 4px;
+  border: none;
+  background: none;
+  margin: 0;
+  text-align: center;
+}
+
+.product-card p {
+  color: var(--charcoal-mid);
+  font-size: 0.88rem;
+  padding: 0 16px;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.product-card .price {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--gold-dark);
+  letter-spacing: 0.04em;
+  padding: 4px 16px;
+  margin-bottom: 16px;
+}
+
+.product-card button {
+  margin: 0 16px 20px;
+  width: calc(100% - 32px);
+}
+
+/* section heading between card groups (e.g. SPECIALTY & HEALTH) */
+main > .product-container + h4,
+main h4:not(.product-card h4) {
+  grid-column: 1 / -1;
+  font-size: 1.4rem;
+  font-family: var(--font-heading);
+  color: var(--brown-dark);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 8px;
+  margin: 2rem 0 0.5rem;
+  background: none;
+  border-left: none;
+  border-radius: 0;
+  padding-left: 0;
+}
+
+/* neutralise <br> spacers inside product layout */
+.product-container br {
+  display: none;
+}
+
+/* ── FOOTER ── */
+footer {
+  background-color: var(--charcoal);
+  border-top: 3px solid var(--gold);
+  color: var(--cream);
+  padding: clamp(24px, 4vw, 48px) clamp(20px, 5vw, 60px);
+  text-align: center;
+  font-size: 0.88rem;
+  letter-spacing: 0.06em;
+}
+
+/* ── DECORATIVE PAGE DIVIDER ── */
+main::before {
+  content: '';
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  margin-bottom: clamp(24px, 4vw, 48px);
+  border-radius: 2px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 14px 20px;
+    gap: 10px;
+  }
+
+  nav {
+    justify-content: center;
+  }
+
+  .product-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+}
