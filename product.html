@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="golden crust bakery">
+        <meta name="author" content="Mulamuleli Nelwamondo">
+        <meta name="Keyword" content="HTML, CSS, JavaScript">
+        <script src="in.js" defer></script>
+        <link rel="stylesheet" href="index.css">
+        <title>
+            Product
+        </title>
+    </head>
+    <center><body>
+        <header>
+            <img src="images/logo.avif" style="width: 100px; height: 60px;">
+            <nav>
+                <a href="home.html">Home</a>
+                <a href="class11.html">About</a>
+                <a href="Service.html">Service</a>
+                <a href="contact.html">Contact</a>
+                <a href="product.html">product</a>
+            </nav>
+        </header>
+        <main>
+            <h1>EVERYDAY LOAVES</h1>
+            <p><i>Our most-loved classiscs. Order by 3pm for next-day pickup</i></p>
+            <div class="product-container">
+
+
+                <div class="product-card">
+                     <img src="images/Brown Bread 2.0.png" style="width: 500px; height: 500px">
+                     <h1>BROWN BREAD</h1>
+                     <P>hearty wholegrain high fibre</P>
+                     <p class="price">R25</p>
+                     <button>Buy Now</button>
+                    </div>
+
+                    <br>
+                    <div class="product-card">
+                     <img src="images/white loaf 2.2.png" style="width: 500px; height: 500px">
+                     <h2>WHITE  BREAD</h2>
+                     <P>Soft, light, perfect for sandwiches</P>
+                     <p class="price">R28</p>
+                     <button>Buy Now</button>
+                    </div>
+
+                    <br>
+                    <div class="product-card">
+                         <img src="images/bread-sourdough-.webp" style="width: 500px; height: 500px">
+                     <h3>SOURDOUGH BREAD</h3>
+                     <P>24hrs ferment, crispy crust, tangy</P>
+                     <p class="price">R45</p>
+                     <button>Buy Now</button>
+                    </div>
+
+                    <h4>SPECIALTY & HEALTH</h4>
+
+                    <br>
+                    <div class="product-card">
+                     <img src="images/gluten loaf.jpg" style="width: 500px; height: 500px">
+                     <h5>GLUTEN-FREE SEED LOAF</h5>
+                     <P>Rice &tapica base, loaded with seed</P>
+                     <p class="price">R55</p>
+                     <button>Buy Now</button>
+                    </div>
+
+                    <br>
+                    <div class="product-card">
+                     <img src="images/rye bread.png" style="width: 500px; height: 500px">
+                     <h6>LOW-GI RYE</h6>
+                     <P>Dense german- style diabetic friendly</p>
+                     <p class="price">R38</p>
+                     <button>Buy Now</button>
+                    </div>
+
+                    <br>
+                    <div class="product-card">
+                     <img src="images/golden-brioche-loaf-.webp" style="width: 500px; height: 500px">
+                     <h7>VEGEN BRIOCHE</h7>
+                     <P>Soft & slightly seets, no egg or dairy</P>
+                     <p class="price">R40</p>
+                     <button>Buy Now</button>
+                    </div>
+                    </main>
+                    <footer>
+        <p style="color: bisque;">
+            &copy; Welcome to Golden Crust Bakery, where every day starts with the
+            smell of fresh bread and ends with something sweet to remember.
+            We bake everything from scratch using time-tested recipes,
+            quality ingredients, and lots of love. Whether it's warm,
+            crusty loaves for your table or flaky pastries for your morning coffee,
+            our team believes good baking brings people together.
+            We are proud to be part of daily moments and special milestones.
+            Stop by, grab a bite, and taste why we've been the neighborhood's
+            favorite since day one.
+            </p>
+            <p style="color: bisque;" id="datetime"></p>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        if (menuToggle && navLinks) {
+            menuToggle.addEventListener("click", () => {
+                navLinks.classList.toggle("active");
+            });
+        }
+
+        // Date and Time
+        function updateDateTime() {
+            const now = new Date();
+
+            const options = {
+                weekday: "long",
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                second: "2-digit"
+            };
+
+            const dateTime = document.getElementById("datetime");
+
+            if (dateTime) {
+                dateTime.textContent =
+                    now.toLocaleDateString("en-US", options);
+            }
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+
+</body>
+</html>
